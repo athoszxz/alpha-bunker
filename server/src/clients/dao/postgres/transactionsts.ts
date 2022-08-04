@@ -114,7 +114,7 @@ class TransactionTable extends PostgresDB
 
             const result = await this.client.query(insertTransactionQuery, [
                 transaction.id,
-                resultSelectIDAccountDest.rows[0].id,
+                resultSelectIDAccount.rows[0].id,
                 transaction.amount,
                 1
             ]);
