@@ -32,14 +32,6 @@ export const ExtractReceipt = ({
   const [allDates, setAllDates] = useState<string[]>([...new Set(allTransactions.map(e => e.date.split('T')[0]))]);
 
   const elements = [];
-  // for (let jao of allDates) {
-  //   const day = allTransactions.filter(item => {
-  //     return item.date.split('T')[0] === jao;
-  //     elements.push(
-  //       day
-  //     )
-  //   })
-  // }
   for (let i = 0; i < allDates.length; i++) {
     const dateSearch = allDates[i];
     const diaTal = allTransactions.filter(item => {
@@ -59,7 +51,7 @@ export const ExtractReceipt = ({
       </div>
       <div className='h-5'></div>
       <div className="flex flex-col items-start h-48 dark:bg-body-dark bg-gray-100 rounded self-stretch p-2 my-3 ">
-        <div className='flex flex-col items-start p-0 h-24 flex-none order-none self-stretch flex-grow'>
+        <div className='flex flex-col items-start p-0 h-24 self-stretch'>
           {
             elements.map((day, index) => {
               return <Day allTransactions={day} />;

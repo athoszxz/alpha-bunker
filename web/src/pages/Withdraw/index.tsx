@@ -77,11 +77,11 @@ export const Withdraw = () => {
               <div className="static mt-9 flex flex-col dark:border dark:border-[#424245] items-start rounded-lg p-4">
                 <div className="flex items-start mb-2">
                   <img src={logoWithdraw} alt="Deposit" className='p-2'/>
-                  <p className="w-24 h-8 not-italic font-medium text-lg leading-1 flex items-center text-yellow-600 flex-none flex-grow-0">
+                  <p className="w-24 h-8 font-medium text-lg leading-1 items-center text-yellow-600">
                     Saque
                   </p>
                 </div>
-                <p className="ml-2 h-9 not-italic font-medium text-lg  text-header-dark dark:text-header-light">Dados para Saque</p>
+                <p className="ml-2 h-9 font-medium text-lg  text-header-dark dark:text-header-light">Dados para Saque</p>
                 <div className="flex items-start p-0 w-64 h-20 flex-none  flex-grow-0">
                   <InputAgency placeholder='Agência' status={true} value={`${user?.agency}-${user?.agency_dig}`} />
                   <InputAgency placeholder='Conta' status={true} value={`${user?.number}-${user?.number_dig}`} />
