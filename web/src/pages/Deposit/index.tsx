@@ -58,7 +58,8 @@ export const Deposit = () => {
       });
   }
 
-  return(<div className='flex flex-col justify-start items-center h-full overflow-auto'>
+  return(
+  <div className='flex flex-col justify-start items-center h-full overflow-auto'>
     <Menu />
     {modal && (
       <Modal
