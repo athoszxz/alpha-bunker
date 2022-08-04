@@ -74,7 +74,7 @@ export const Withdraw = () => {
         !receipt ?
           ( 
             <>
-              <div className="static flex flex-col dark:border dark:border-[#424245] items-start rounded-lg p-4">
+              <div className="static mt-9 flex flex-col dark:border dark:border-[#424245] items-start rounded-lg p-4">
                 <div className="flex items-start mb-2">
                   <img src={logoWithdraw} alt="Deposit" className='p-2'/>
                   <p className="w-24 h-8 not-italic font-medium text-lg leading-1 flex items-center text-yellow-600 flex-none flex-grow-0">
@@ -96,7 +96,7 @@ export const Withdraw = () => {
                 />
                 {erroServer && <p>{erroServer}</p>}
               </div>
-              <div className='h-2'></div>
+              <div className='m-9'></div>
             </>
           )
           : 

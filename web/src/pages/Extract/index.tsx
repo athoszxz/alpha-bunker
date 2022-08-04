@@ -71,8 +71,7 @@ export const Extract = () => {
     <>
       <div className='flex flex-col justify-start items-center h-full overflow-auto'>
         <Menu />
-        <button onClick={handleDeposit}>Gerar Extrato</button>
-        <h1 className="text-black">Extrato</h1>
+        <button onClick={handleDeposit} className='flex flex-row items-center mt-2 mb-2 h-6 p-2 bg-[#75ACB1] rounded flex-none order-none flex-grow-0'>Gerar Extrato</button>
         {payload[0] && <ExtractReceipt allTransactions={payload} />}
       </div>
     </>
