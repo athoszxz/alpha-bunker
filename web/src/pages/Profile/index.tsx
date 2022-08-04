@@ -22,9 +22,9 @@ export const Profile = () => {
       <div className='flex flex-col justify-between  overflow-auto'>
         <div className=' flex flex-col  place-content-evenly top-0 bg-teal-700 w-[360px] h-[207px] ml-auto mr-auto rounded-b-3xl p-[30px]'>
           <Link to='/deposit'><img src={back}/></Link>
-          <div className=''>
+          <div className='flex flex-col justify-start items-center'>
             <img src={avatar}></img>
-            <p className='w-40 h-6 not-italic font-medium text-xl leading-6 flex items-center text-white'>{user?.name}</p>
+            <p className='w-fit h-6 not-italic font-medium text-xl leading-6 flex items-center text-white'>{user?.name}</p>
           </div>
         </div>
       </div>
