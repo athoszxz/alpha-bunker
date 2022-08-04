@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import avatar from '../../images/avatar.svg';
 import back from '../../images/back.svg';
 
-
-
 /**
  * Archive: src/pages/Profile.tsx
  *

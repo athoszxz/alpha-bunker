@@ -4,6 +4,7 @@ import { Button } from './Button';
 
 interface PropTypes {
   title: string;
+  message?: string;
   handleConfirmModal: () => void;
   setModal: (modal: boolean) => void;
 }
@@ -18,7 +19,7 @@ interface PropTypes {
  * Author: Rey
  */
 
-export const Modal = ({ title, handleConfirmModal, setModal }: PropTypes) => {
+export const Modal = ({ title, message, handleConfirmModal, setModal }: PropTypes) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   function closeModal(event: MouseEvent<HTMLDivElement>) {
@@ -54,9 +55,15 @@ export const Modal = ({ title, handleConfirmModal, setModal }: PropTypes) => {
             onClick={() => setModal(false)}
           />
         </div>
-        <p className="my-5 px-5 text-sm text-center text-paragraph-dark font-medium">
+        { message ? 
+          <p className="my-5 px-5 text-sm text-center text-paragraph-dark font-medium">
+            {message}
+          </p>
+          : 
+          <p className="my-5 px-5 text-sm text-center text-paragraph-dark font-medium">
           Esta ação efetuará a transação. deseja continuar?
-        </p>
+          </p>}
+        
         <div className="mb-5 flex justify-center gap-5">
           <Button
             type="button"

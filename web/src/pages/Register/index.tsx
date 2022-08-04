@@ -1,9 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Modal } from '../../components/Modal';
-import { api } from '../../libs/api';
 import { useUser } from '../../providers/UserProvider';
-import { UserContext } from '../../providers/UserProvider';
 import { Input } from '../../components/Input';
 import logo from '../../images/logo-bunker.svg';
 import { Navigate } from 'react-router-dom';
@@ -37,14 +35,6 @@ export const Register = () => {
   }, [login]);
 
   async function handleRegister() {
-    // if(user){
-    //   user.name = 'Bruno Silva';
-    //   user.email = 'pamonha@gmail.com';
-    //   user.cpf = '123456789';
-    //   user.birthDate = '2022-08-01';
-    //   setLogin(true);
-    // }
-    //console.log(user?.name);
     if(password === confirmPassword){
       try {
         fetch('http://127.0.0.1:8080/users', {
@@ -54,42 +44,33 @@ export const Register = () => {
             'Content-Type': 'application/json',
       
           },
-            body: JSON.stringify({
-              name: name,
-              cpf: Number(cpf),
-              email: email,
-              birthdate: birthDate,
-              password: password
+          body: JSON.stringify({
+            name: name,
+            cpf: Number(cpf),
+            email: email,
+            birthdate: birthDate,
+            password: password
           })
         }).then(res => res.json())
-        .then(res => {
-          if(res.messages[0]){
-            setErroServer(res.messages);
-            setModal(false);
-          }else{
-            if(user){
-              user.name = res.data[0].name;
-              user.email = res.data[0].email;
-              user.cpf = res.data[0].cpf;
-              user.birth_date = res.data[0].birthdate;
-              user.agency = res.data[0].agency;
-              user.agency_dig = res.data[0].agency_dig;
-              user.number = res.data[0].number;
-              user.number_dig = res.data[0].number_dig;
-              setLogin(true);
+          .then(res => {
+            if(res.messages[0]){
+              setErroServer(res.messages);
               setModal(false);
+            }else{
+              if(user){
+                user.name = res.data[0].name;
+                user.email = res.data[0].email;
+                user.cpf = res.data[0].cpf;
+                user.birth_date = res.data[0].birthdate;
+                user.agency = res.data[0].agency;
+                user.agency_dig = res.data[0].agency_dig;
+                user.number = res.data[0].number;
+                user.number_dig = res.data[0].number_dig;
+                setLogin(true);
+                setModal(false);
+              }
             }
-          }
-        });  
-
-        // const result = await api.post('users', {
-        //   name: name,
-        //   cpf: Number(cpf),
-        //   email: email,
-        //   birthDate: birthDate,
-        //   password: password
-        // });
-        // console.log(result);
+          });  
       } catch (error) {
         console.log(error);
       }
@@ -104,7 +85,8 @@ export const Register = () => {
     <>
       {modal && (
         <Modal
-          title="Depósito"
+          title="Registro"
+          message="Tem certeza que deseja se registrar em nosso Banco?"
           setModal={setModal}
           handleConfirmModal={handleRegister}
         />
