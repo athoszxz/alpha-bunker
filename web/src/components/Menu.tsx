@@ -38,7 +38,7 @@ export const Menu = () => {
           <img src={arrow}></img>
         </div>
         <div className='flex flex-row text-base'>
-          <img src={eye} ></img>
+          <img className='w-7 h-7 mt-2' src={eye} ></img>
           <p className='not-italic font-bold text-2xl leading-7 text-brand-base m-[5px]'> {user?.amount} </p>
           <p className='not-italic font-bold text-sm leading-4 text-brand-hover pt-[15px]'> R$ </p>
         </div>
