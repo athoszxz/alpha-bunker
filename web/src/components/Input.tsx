@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface PropTypes {
   placeholder: string;
   type: 'text' | 'password' | 'email' | 'date' | 'number';
@@ -34,7 +32,3 @@ export const Input = ({
     </div>
   );
 };
-
-
-
-

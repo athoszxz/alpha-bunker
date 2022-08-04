@@ -7,9 +7,3 @@ route.route("/accounts")
     .post(new CreateAccount().handle.bind(new CreateAccount()));
 
 export default route;
-/* exemplo de requisição:
-{
-    EXCLUIR!!
-}
-*/
-
