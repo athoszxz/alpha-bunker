@@ -36,8 +36,8 @@ export const Extract = () => {
   //   fetchData();
   // }, [someId]); // Or [] if effect doesn't need props or state
 
-  useEffect(() => {
-    async function handleDeposit() {
+
+    function handleDeposit() {
       fetch('http://127.0.0.1:8080/extracts', {
         method: 'POST',
         headers: {
@@ -64,15 +64,17 @@ export const Extract = () => {
           }
         });
     }
-    handleDeposit();
-  }, []);
+
 
 
   return (
     <>
-      <Menu />
-      <h1 className="text-black">Extrato</h1>
-      <ExtractReceipt allTransactions={payload} />
+      <div className='flex flex-col justify-start items-center h-full overflow-auto'>
+        <Menu />
+        <button onClick={handleDeposit}>Gerar Extrato</button>
+        <h1 className="text-black">Extrato</h1>
+        {payload[0] && <ExtractReceipt allTransactions={payload} />}
+      </div>
     </>
 
   );

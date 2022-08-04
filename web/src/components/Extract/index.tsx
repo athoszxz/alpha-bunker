@@ -62,7 +62,7 @@ export const ExtractReceipt = ({
         <div className='flex flex-col items-start p-0 h-24 flex-none order-none self-stretch flex-grow'>
           {
             elements.map((day, index) => {
-              return <Day key={index} allTransactions={day} />;
+              return <Day allTransactions={day} />;
             })
           }
         </div>

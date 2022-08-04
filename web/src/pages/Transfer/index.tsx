@@ -58,6 +58,7 @@ export const Transfer = () => {
           setModal(false);
         } else {
           setErroServer('');
+          setModal(false);
           if (user) {
             user.amount -= res.data[0].final_amount;
           }
@@ -98,7 +99,7 @@ export const Transfer = () => {
                 </div>
                 <Input placeholder='CPF' type='number' value={cpf_dest} setTextValue={setCpf_dest} />
                 <Input placeholder='Valor' type='number' value={valor} setTextValue={setValor} />
-                <Input placeholder='Senha' type='number' value={password} setTextValue={setPassword} />
+                <Input placeholder='Senha' type='password' value={password} setTextValue={setPassword} />
                 <Button
                   category="primary"
                   label="Transferir"
