@@ -47,6 +47,7 @@ export const Deposit = () => {
           setErroServer(res.messages);
           setModal(false);
         } else {
+          setModal(false);
           setErroServer('');
           if(user){
             user.amount += res.data[1].totalAmout;

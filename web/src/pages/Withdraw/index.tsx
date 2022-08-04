@@ -41,7 +41,7 @@ export const Withdraw = () => {
         number_dig: user?.number_dig,
         cpf: Number(cpf),
         amount: Number(valor), 
-        password: Number(password)
+        password: password
       })
     }).then(res => res.json())
       .then(res => {
@@ -49,6 +49,7 @@ export const Withdraw = () => {
           setErroServer(res.messages);
           setModal(false);
         } else {
+          setModal(false);
           setErroServer('');
           if(user){
             user.amount -= res.data[0].total_amount_with_fees;
