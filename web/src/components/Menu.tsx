@@ -20,7 +20,7 @@ export const Menu = () => {
   return (
     <div className=' flex flex-col  place-content-evenly top-0 bg-teal-700 w-[360px] h-[207px] ml-auto mr-auto rounded-b-3xl p-[30px]'>
       <div className='flex flex-row justify-between'>
-        <p className='h-6 not-italic font-medium text-xl leading-6 text-header-light flex-none order-none flex-grow-0'>Bem-vindo, {user?.name.split(" ")[0]}!</p>
+        <p className='h-6 not-italic font-medium text-xl leading-6 text-header-light flex-none order-none flex-grow-0'>Bem-vindo, {user?.name.split(' ')[0]}!</p>
         <Link to='/profile'><img src={perfil}/></Link>
       </div>
       <div className='flex flex-row justify-evenly px mt-[10px]'>
@@ -44,4 +44,4 @@ export const Menu = () => {
         </div>
       </div>
     </div>
-  )}
+  );};
