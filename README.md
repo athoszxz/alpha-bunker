@@ -1,4 +1,19 @@
-# alphabunker
+# Alphabunker
+Sistema bancário de troca monetária!
+
+![image](https://user-images.githubusercontent.com/11262233/231282113-fb06c460-bddc-4739-bb1e-ddcf95498a42.png)
+
+Projeto Web Completo de um App Bancário:
+
+Banco de Dados: PostgreSql
+
+Backend-End: Typescript + NodeJS utilizando arquitetura MVC e WebSocket
+
+Front-end: Vite + TailWindcss
+
+Rotas e Telas: Login, Criação de conta, Extrato, Transferência, Depósitos, Saques, Perfil e Comprovantes.
+
+
 
 # Projeto Web
 
